@@ -1,5 +1,11 @@
 @extends('app.public.layouts.app')
 
+{{-- TODO: AGREGAR TITULO DEL HOME --}}
+@section('title','Fut-App')
+
+{{-- TODO: AGREGAR TITULO DEL HOME --}}
+@section('home','Fut-App')
+
 {{-- TODO: AGREGAR TITULO DEL INDEX --}}
 @section('header-name','INDEX PUBLICO')
 
@@ -24,10 +30,6 @@
             <button type="button" class="btn btn-light">Light</button>
             <button type="button" class="btn btn-dark">Dark</button>
             <button type="button" class="btn btn-link">Link</button>
-
-            <i class="bi bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
-
-            <i class="fa-solid fa-futbol"></i>
         </div>
     </div>
 @endsection

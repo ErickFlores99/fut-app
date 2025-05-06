@@ -1,4 +1,3 @@
 <header>
-    Nombre de la vista
-    @yield('header-name')
+    <h2> @yield('header-name')</h2>
 </header>
