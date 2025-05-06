@@ -5,13 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Admin') }}</title>
+        <title>@yield('title','404')</title>
+
+        <!--  Paleta de colores  -->
+        <link rel="stylesheet" href="{{ asset('assets/css/colors.css') }}">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-5.3.3/css/bootstrap.min.css') }}">
+         
+        <!-- FontAwesime Icons  -->
+        <link rel="stylesheet" href="{{ asset('assets/icons/fontawesome-free-6.7.2-web/css/all.min.css') }}">
 
         @yield('css') <!-- Permite cargar CSS adicional por secciones -->
     </head>
     <body>
-        <!-- Nav Bar -->
-        @include('app.admin.components.navbar')
+       <!-- Nav Bar -->
+       @include('app.admin.components.navbar')
 
         <!-- Page Heading -->
         @include('app.admin.components.header')
@@ -20,6 +29,12 @@
         <main>
             @yield('content')
         </main>
+
+        <!-- Bootstrap JS -->
+        <script src="{{ asset('assets/libs/bootstrap-5.3.3/js/bootstrap.min.js') }}"></script>
+
+        <!-- JQuery -->
+        <script src="{{ asset('assets/libs/jQuery/jquery-3.7.1.min.js') }}"></script>
 
         @yield('script') <!-- Permite cargar scripts adicionales por secciones -->
     </body>
