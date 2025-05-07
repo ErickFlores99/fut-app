@@ -14,164 +14,154 @@
     {{-- TODO: Archivos para los scripts --}}
 @endsection
 
+<!-- Nav Bar -->
+@section('admin_navbar')
+    @include('app.admin.components.nav-index')
+@endsection
+       
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       .custom-card {
+            width: 100%;
+            heigt: 200%;
+            aspect-ratio: 1 / 1;
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+        }
 
-<style>
-    .pricing-card {
-        border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        background: white;
-        text-align: center;
-        padding-bottom: 2rem;
-        position: relative;
-    }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 12px;
+        }
+  </style>
 
-    .card-header {
-        background-color: #2c3e50;
-        color: white;
-        padding: 1.5rem 1rem;
-        font-size: 1.25rem;
-        font-weight: bold;
-    }
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-9">
+                <!-- Primera fila: 4 tarjetas -->
+                <div class="row g-4">
+                    <!-- Card: 1 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-trophy fa-2x text-white"></i>
+                            </div>
 
-    .price-circle {
-        width: 70px;
-        height: 70px;
-        background-color: orange;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-        font-weight: bold;
-        position: absolute;
-        top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-    }
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Ligas/Torneos</h5>
 
-    .feature-list {
-        margin-top: 4rem;
-        padding: 0 1.5rem;
-    }
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-    .feature-list li {
-        margin: 0.5rem 0;
-        list-style: none;
-        color: #666;
-    }
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
 
-    .btn-signup {
-        margin-top: 1.5rem;
-        border-radius: 30px;
-        padding: 0.5rem 2rem;
-        font-weight: bold;
-    }
+                    <!-- Card: 2 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-shirt fa-2x text-white"></i>
+                            </div>
 
-    .highlight-orange { background-color: orange; color: white; }
-    .highlight-blue { background-color: #3498db; color: white; }
-    .highlight-green { background-color: #2ecc71; color: white; }
-</style>
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Equipos</h5>
 
-<div class="container py-5">
-    <div class="row justify-content-center align-items-end g-4">
-        <!-- Plan 1 (Small) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card">
-                <div class="card-header">Ligas/Torneos</div>
-                <div class="price-circle highlight-green">$5</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-success btn-signup">Sign Up</button>
-            </div>
-        </div>
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <!-- Plan 2 (Large) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card" style="transform: scale(1.1);">
-                <div class="card-header">Partidos</div>
-                <div class="price-circle highlight-orange">$19</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-warning text-white btn-signup">Sign Up</button>
-            </div>
-        </div>
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
 
-        <!-- Plan 3 (Large) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card" style="transform: scale(1.1);">
-                <div class="card-header">Resultados</div>
-                <div class="price-circle highlight-blue">$49</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-primary btn-signup">Sign Up</button>
-            </div>
-        </div>
+                    <!-- Card: 3 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-futbol fa-2x text-white"></i>
+                            </div>
 
-        <!-- Plan 4 (Small) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card">
-                <div class="card-header">Equipos</div>
-                <div class="price-circle highlight-green">$99</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-success btn-signup">Sign Up</button>
-            </div>
-        </div>
-    </div>
-</div>
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Partidos/Decretos</h5>
 
-<div class="container py-5">
-    <div class="row justify-content-center align-items-end g-4">
-        <!-- Plan 1 (Small) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card">
-                <div class="card-header">Configuración</div>
-                <div class="price-circle highlight-green">$5</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-success btn-signup">Sign Up</button>
-            </div>
-        </div>
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-        <!-- Plan 4 (Small) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="pricing-card">
-                <div class="card-header">Usuario</div>
-                <div class="price-circle highlight-green">$99</div>
-                <ul class="feature-list mt-5">
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                    <li>Lorem ipsum</li>
-                </ul>
-                <button class="btn btn-success btn-signup">Sign Up</button>
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
+
+                    <!-- Card: 4 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-clipboard fa-2x text-white"></i>
+                            </div>
+
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Resltados</h5>
+
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda fila: 2 tarjetas centradas -->
+                <div class="row g-4 mt-1 justify-content-center">
+                    <!-- Card: 1 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-user-gear fa-2x text-white"></i>
+                            </div>
+
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Usuario</h5>
+
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
+
+                    <!-- Card: 2 -->
+                    <div class="col-6 col-md-3">
+                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
+                            <!-- Cuadro de ícono con fondo -->
+                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-gear fa-2x text-white"></i>
+                            </div>
+
+                            <!-- Título -->
+                            <h5 class="fw-bold mb-2">Configuración</h5>
+
+                            <!-- Descripción -->
+                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                            <!-- Botón -->
+                            <button class="btn btn-primary btn-sm">Acceder</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
