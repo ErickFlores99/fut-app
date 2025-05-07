@@ -110,7 +110,7 @@
                             </div>
 
                             <!-- Título -->
-                            <h5 class="fw-bold mb-2">Resltados</h5>
+                            <h5 class="fw-bold mb-2">Resultados</h5>
 
                             <!-- Descripción -->
                             <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
