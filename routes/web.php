@@ -24,7 +24,7 @@ require __DIR__.'/auth.php';
 // Redirigir a login si el usuario no está autenticado
 Route::get('/app', function () {
     return view('app.admin.index');
-})->middleware('auth'); // protege la ruta con el middleware de autenticación
+})->middleware('auth')->name('admin_home'); // protege la ruta con el middleware de autenticación
 
 Route::get('/dashboard', function () {
     return view('dashboard');
