@@ -45,7 +45,7 @@
                             <!-- Email Address -->
                             <div class="input-group mb-3">
                                 <span class="input-group-text">
-                                    <i class="fa-solid fa-user"></i>
+                                    <i class="fa-solid fa-at"></i>
                                 </span>
                                 <input class="form-control"
                                     id="email" 
