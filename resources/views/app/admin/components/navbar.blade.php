@@ -1,7 +1,7 @@
 <!-- Navbar solo para pantallas medianas y grandes -->
 <nav class="navbar d-none d-md-block">
   <div class="container-fluid">
-    <a href="{{ route('public_home') }}" class="text-decoration-none text-dark navbar-brand">
+    <a href="{{ route('admin_home') }}" class="text-decoration-none text-dark navbar-brand">
       <img src="assets/images/logo.webp" alt="Logo" size="32" width="32" height="32" class="d-inline-block align-text-center">
         @yield('home','404')
     </a>
@@ -64,7 +64,7 @@
 <nav class="navbar fixed-bottom d-block d-md-none">
   <ul class="nav nav-pills nav-fill justify-content-center">
     <li class="nav-item">
-      <a href="{{ route('public_home') }}" class="nav-link">
+      <a href="{{ route('admin_home') }}" class="nav-link">
         <i class="fa-solid fa-house"></i>
       </a>
     </li>

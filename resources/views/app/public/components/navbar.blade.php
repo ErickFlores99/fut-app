@@ -47,8 +47,8 @@
 </nav>
 
 <!-- Navbar solo para móvil -->
-<nav class="navbar fixed-bottom d-block d-md-none">
-  <ul class="nav nav-pills nav-fill justify-content-center">
+<nav class="navbar fixed-bottom d-block d-md-none bg-white shadow-sm">
+  <ul class="nav nav-pills nav-fill justify-content-center w-100">
     <li class="nav-item">
       <a href="{{ route('public_home') }}" class="nav-link">
         <i class="fa-solid fa-house"></i>
