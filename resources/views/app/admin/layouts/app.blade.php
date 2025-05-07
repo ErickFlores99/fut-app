@@ -20,10 +20,11 @@
     </head>
     <body>
        <!-- Nav Bar -->
-       @include('app.admin.components.navbar')
-
+       @yield('admin_navbar')
+       
         <!-- Page Heading -->
-        @include('app.admin.components.header')
+        @yield('admin_header')
+        {{-- @include('app.admin.components.header') --}}
 
         <!-- Page Content -->
         <main>
