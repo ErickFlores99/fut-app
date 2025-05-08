@@ -16,6 +16,9 @@
         <!-- FontAwesime Icons  -->
         <link rel="stylesheet" href="{{ asset('assets/icons/fontawesome-free-6.7.2-web/css/all.min.css') }}">
 
+        <!-- DataTables  -->
+        <link rel="stylesheet" href="{{ asset('assets/libs/DataTables/datatables.min.css') }}">
+
         @yield('css') <!-- Permite cargar CSS adicional por secciones -->
     </head>
     <body>
@@ -30,11 +33,35 @@
             @yield('content')
         </main>
 
+        <!-- SweetAlert2 -->
+        <script src="{{ asset('assets/libs/sweetalert2@11.js') }}"></script>
+
+        <!-- Popper.js -->
+        <script src="assets/libs/popper.min.js"></script>
+
         <!-- Bootstrap JS -->
         <script src="{{ asset('assets/libs/bootstrap-5.3.3/js/bootstrap.min.js') }}"></script>
 
-        <!-- JQuery -->
-        <script src="{{ asset('assets/libs/jQuery/jquery-3.7.1.min.js') }}"></script>
+        <!-- jQuery -->
+        <script src="{{ asset('assets/libs/jquery-3.7.1.min.js') }}"></script>
+
+        <!-- DataTables -->
+        <script src="{{ asset('assets/libs/DataTables/datatables.min.js') }}"></script>
+
+        <!-- Script de inicialización -->
+        <script>
+            // Inicialización del tooltip
+            document.addEventListener("DOMContentLoaded", function () {
+                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                    new bootstrap.Tooltip(tooltipTriggerEl, {
+                        placement: tooltipTriggerEl.getAttribute('data-bs-placement') || 'top',
+                        fallbackPlacements: [],
+                        customClass: tooltipTriggerEl.getAttribute('data-custom-class') || ''
+                    });
+                });
+            });
+        </script>
 
         @yield('script') <!-- Permite cargar scripts adicionales por secciones -->
     </body>
