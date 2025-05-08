@@ -4,17 +4,17 @@ Migracion Catálogos
         nombre: Libre, Segunda, Veteranos, etc.
         estatus: AC (activo), IN...
 
-    2. Tabla dias_juego
+    2. Tabla dias_juegos
         id
         nombre: Sabatina, Dominical, Nocturna...
         estatus: AC (activo), IN...
 
-    3. Tabla rama
+    3. Tabla ramas
         id
         nombre: Varonil, Femenil, Mixta...
         estatus: AC (activo), IN...
 
-    4. Tabla tipo_competencia
+    4. Tabla tipo_competencias
         id
         nombre: Ej. Liga, Torneo, Copa
         estatus: AC (activo), IN (inactivo), etc.
@@ -28,7 +28,7 @@ Migracion competenias
     1. Tabla competencias
         id
         nombre
-        competencia_id
+        tipo_competencia_id
         categoria_id
         dia_juego_id
         rama_id
@@ -55,7 +55,8 @@ Migracion equipos
     2. Tabla equipos_liga
         id	
         equipo_id
-        liga_id
+        competencia_id
+        temporada_id
         fecha_registro
         estatus
 
