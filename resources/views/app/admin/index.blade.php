@@ -13,12 +13,13 @@
 @section('script')
     {{-- TODO: Archivos para los scripts --}}
     <script>
-        // Alerta SweetAlert2
+        /* Alerta SweetAlert2
         Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
-                icon: "success"
-            });
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
+        */
     </script>
 @endsection
 
@@ -61,7 +62,7 @@
                             </div>
 
                             <!-- Título -->
-                            <h5 class="fw-bold mb-2">Ligas/Torneos</h5>
+                            <h5 class="fw-bold mb-2">Competencias</h5>
 
                             <!-- Descripción -->
                             <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -173,7 +174,7 @@
             </div>
         </div>
     </div>
-
+{{--
     <div>
         <!-- Tooltip arriba (por defecto) -->
         <button 
@@ -207,4 +208,5 @@
             Tooltip derecha
         </button>
     </div>
+--}}
 @endsection

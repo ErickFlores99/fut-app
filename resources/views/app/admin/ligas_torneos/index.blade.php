@@ -34,7 +34,6 @@
     <style>
         .custom-card {
                 width: 100%;
-                heigt: 200%;
                 aspect-ratio: 1 / 1;
                 border-radius: 2rem;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -60,7 +59,7 @@
                 <div class="col-12 col-md-8 text-center text-md-start mb-2 mb-md-0">
                     <a href="{{ route('ligas_torneos.index') }}" class="text-decoration-none text-dark">
                         <h3>
-                            <strong>Eventos Deportivos</strong>
+                            <strong>Competencias</strong>
                         </h3>
                     </a>
                 </div>

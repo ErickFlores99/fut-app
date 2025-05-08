@@ -37,16 +37,16 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
     // Grupo para la sección "Ligas / Torneos"
     Route::prefix('ligas-torneos')->name('ligas_torneos.')->group(function () {
 
-        Route::get('/', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'index'])
+        Route::get('/', [App\Http\Controllers\Admin\CompetenciaController::class, 'index'])
             ->name('index');
 
-        Route::get('/competencias/mostrar', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'mostrarCompetencia'])
+        Route::get('/competencias/mostrar', [App\Http\Controllers\Admin\CompetenciaController::class, 'mostrarCompetencia'])
             ->name('competencias.mostrar');
 
-        Route::get('/competencias/nueva/datos-basicos', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'datosBasicos'])
+        Route::get('/competencias/nueva/datos-basicos', [App\Http\Controllers\Admin\CompetenciaController::class, 'datosBasicos'])
             ->name('competencias.datos');
 
-        Route::post('/competencias', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'crearCompetencia'])
+        Route::post('/competencias', [App\Http\Controllers\Admin\CompetenciaController::class, 'crearCompetencia'])
             ->name('competencias.crear');
 
     });
