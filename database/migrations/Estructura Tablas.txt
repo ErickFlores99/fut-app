@@ -1,0 +1,78 @@
+Migracion Catálogos
+    1. Tabla competencias
+        id
+        nombre: Ej. Liga, Torneo, Copa
+        estatus: AC (activo), IN (inactivo), etc.
+
+    2. Tabla categorias
+        id
+        nombre: Libre, Segunda, Veteranos, etc.
+        estatus: AC (activo), IN...
+
+    3. Tabla dias_juego
+        id
+        nombre: Sabatina, Dominical, Nocturna...
+        estatus: AC (activo), IN...
+
+    4. Tabla rama
+        id
+        nombre: Varonil, Femenil, Mixta...
+        estatus: AC (activo), IN...
+
+    5. Tabla temporadas
+        id
+        nombre: Apertura 2025, Clausura 2025, ...
+        estatus: AC (activo), IN...
+
+Migracion eventos_deportivos
+    Tabla eventos_deportivos
+        id
+        nombre
+        competencia_id
+        categoria_id
+        dia_juego_id
+        rama_id
+        temporada_id
+        equipos	Opcional, o calculado después.
+        estatus (AC, FN, EP)
+        fecha_inicio
+        fecha_fin
+        reglamento_pdf
+        notas
+        created_by
+
+Migracion equipos
+    Tabla equipos
+        id
+        nombre
+        escudoURL
+        horario
+        campo
+        ubicacion
+        activo
+        timestamps
+
+    Tabla equipos_liga
+        id	
+        equipo_id
+        liga_id
+        fecha_registro
+        estatus
+
+Migracion responsables
+    Tabla responsables
+        id
+        nombre
+        tel
+        email
+        activo
+        timestamps
+
+    Tabla responsables_equipo
+        id
+        equipo_id
+        responsable_id
+        timestamps
+
+
+
