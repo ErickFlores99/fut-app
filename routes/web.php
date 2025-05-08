@@ -21,10 +21,25 @@ Route::get('/', function () {
 // Rutas de autenticación Breeze
 require __DIR__.'/auth.php';
 
-// Redirigir a login si el usuario no está autenticado
-Route::get('/app', function () {
-    return view('app.admin.index');
-})->middleware('auth')->name('admin_home'); // protege la ruta con el middleware de autenticación
+/**************************************************************************
+ * 
+ *  Ruta de administración (requiere autenticación)
+ *  Redirigir a login si el usuario no está autenticado
+ * 
+**************************************************************************/
+Route::middleware(['auth', 'revalidate'])->group(function () {
+
+    // Ruta principal del dashboard
+    Route::get('/app', function () {
+        return view('app.admin.index');
+    })->name('admin_home');
+
+    // Grupo para la sección "Ligas / Torneos"
+    Route::prefix('ligas-torneos')->group(function () {
+        Route::get('/', [App\Http\Controllers\AdminController\EventoDeportivoController::class, 'index'])
+            ->name('ligas_torneosIndex');
+    });
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
