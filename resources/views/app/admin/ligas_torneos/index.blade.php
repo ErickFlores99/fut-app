@@ -6,209 +6,91 @@
 {{-- TODO: AGREGAR TITULO DEL HOME --}}
 @section('home','Fut-Admin')
 
-@section('css')
-    {{-- TODO: Archivos para el estilo --}}
-@endsection
-
-@section('script')
-    {{-- TODO: Archivos para los scripts --}}
-    <script>
-        // Alerta SweetAlert2
-        Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
-                icon: "success"
-            });
-    </script>
-@endsection
-
 <!-- Nav Bar -->
 @section('admin_navbar')
     @include('app.admin.components.nav-index')
 @endsection
 
-<!-- Header -->
-@section('header')
-    @include('app.admin.components.header')
+@section('script')
+    {{-- TODO: Archivos para los scripts --}}
+
+    <!-- CUSTOM JS -->
+    <script src="{{ asset('admin/ligas_torneos/index.js') }}?version=1.1" type="text/javascript"></script>
+
+    <script>
+        /* Alerta SweetAlert2
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
+        */
+    </script>
 @endsection
 
-@section('content')
+@section('css')
+    {{-- TODO: Archivos para el estilo --}}
+
     <style>
-       .custom-card {
-            width: 100%;
-            heigt: 200%;
-            aspect-ratio: 1 / 1;
-            border-radius: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            display: flex;
-            justify-content: center;
-        }
+        .custom-card {
+                width: 100%;
+                heigt: 200%;
+                aspect-ratio: 1 / 1;
+                border-radius: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                display: flex;
+                justify-content: center;
+            }
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background-color: #007bff;
-            border-radius: 12px;
-        }
-  </style>
+            .icon-box {
+                width: 60px;
+                height: 60px;
+                background-color: #007bff;
+                border-radius: 12px;
+            }
+        </style>
+@endsection
 
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-9">
-                <!-- Primera fila: 4 tarjetas -->
-                <div class="row g-4">
-                    <!-- Card: 1 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-trophy fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Ligas/Torneos</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
-
-                    <!-- Card: 2 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-shirt fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Equipos</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
-
-                    <!-- Card: 3 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-futbol fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Partidos/Decretos</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
-
-                    <!-- Card: 4 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-clipboard fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Resultados</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
+<!-- Header -->
+@section('admin_header')
+    <div class="col-12 col-sm-11 mx-auto">
+        <div class="shadow-sm p-3 mb-3 bg-white rounded">
+            <div class="row align-items-center">
+                <!-- Columna del título -->
+                <div class="col-12 col-md-8 text-center text-md-start mb-2 mb-md-0">
+                    <a href="{{ route('ligas_torneos.index') }}" class="text-decoration-none text-dark">
+                        <h3>
+                            <strong>Eventos Deportivos</strong>
+                        </h3>
+                    </a>
                 </div>
 
-                <!-- Segunda fila: 2 tarjetas centradas -->
-                <div class="row g-4 mt-1 justify-content-center">
-                    <!-- Card: 1 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-user-gear fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Usuario</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
-
-                    <!-- Card: 2 -->
-                    <div class="col-6 col-md-3">
-                        <div class="custom-card p-3 text-center d-flex flex-column align-items-center">
-                            <!-- Cuadro de ícono con fondo -->
-                            <div class="icon-box mb-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-gear fa-2x text-white"></i>
-                            </div>
-
-                            <!-- Título -->
-                            <h5 class="fw-bold mb-2">Configuración</h5>
-
-                            <!-- Descripción -->
-                            <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-                            <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
-                        </div>
-                    </div>
+                <!-- Columna del botón -->
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <button  id="btn_mostrarForm_nvaCompetencia" onclick="mostrarForm_nvaCompetencia();"
+                        class="btn btn-primary btn-sm"
+                        data-bs-toggle="tooltip" 
+                        title="Agregar nuevo evento deportivo" 
+                        data-bs-placement="top"
+                    >
+                        Nuevo
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+@endsection
 
-    <div>
-        <!-- Tooltip arriba (por defecto) -->
-        <button 
-            data-bs-toggle="tooltip" 
-            title="Arriba (default)" 
-            data-bs-placement="top">
-            Tooltip arriba
-        </button>
+@section('content')
+    <div class="col-12 col-sm-11 mx-auto">
+        <div class="shadow-sm p-3 mb-3 bg-white rounded d-none" id="section_formCompetencias">
+                <!-- Aquí mostramos el formulario -->  
+        </div>
 
-        <!-- Tooltip abajo -->
-        <button 
-            data-bs-toggle="tooltip" 
-            title="Tooltip abajo" 
-            data-bs-placement="bottom">
-            Tooltip abajo
-        </button>
-
-        <!-- Tooltip a la izquierda -->
-        <button 
-            data-bs-toggle="tooltip" 
-            title="Tooltip izquierda" 
-            data-bs-placement="left">
-            Tooltip izquierda
-        </button>
-
-        <!-- Tooltip a la derecha -->
-        <button 
-            data-bs-toggle="tooltip" 
-            title="Tooltip derecha" 
-            data-bs-placement="right">
-            Tooltip derecha
-        </button>
+        <div id="section_listCompetencias">
+            <!-- Aquí mostramos las competencias ya creadas -->  
+        </div>
     </div>
+
 @endsection

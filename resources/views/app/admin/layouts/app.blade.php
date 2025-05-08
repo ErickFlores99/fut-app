@@ -27,7 +27,6 @@
        
         <!-- Page Heading -->
         @yield('admin_header')
-        {{-- @include('app.admin.components.header') --}}
 
         <!-- Page Content -->
         <main>
