@@ -35,10 +35,22 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
     })->name('admin_home');
 
     // Grupo para la sección "Ligas / Torneos"
-    Route::prefix('ligas-torneos')->group(function () {
-        Route::get('/', [App\Http\Controllers\AdminController\EventoDeportivoController::class, 'index'])
-            ->name('ligas_torneosIndex');
+    Route::prefix('ligas-torneos')->name('ligas_torneos.')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'index'])
+            ->name('index');
+
+        Route::get('/competencias/mostrar', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'mostrarCompetencia'])
+            ->name('competencias.mostrar');
+
+        Route::get('/competencias/nueva/datos-basicos', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'datosBasicos'])
+            ->name('competencias.datos');
+
+        Route::post('/competencias', [App\Http\Controllers\Admin\EventosDeportivosController::class, 'crearCompetencia'])
+            ->name('competencias.crear');
+
     });
+
 });
 
 Route::get('/dashboard', function () {
