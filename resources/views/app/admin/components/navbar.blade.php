@@ -8,9 +8,9 @@
 
     <ul class="nav nav-underline justify-content-center">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('ligas_torneos.index') }}" >
             <i class="fa-solid fa-trophy"></i>
-            Ligas/Torneos
+            Competencias
         </a>
       </li>
       <li class="nav-item">
@@ -61,8 +61,8 @@
 </nav>
 
 <!-- Navbar solo para móvil -->
-<nav class="navbar fixed-bottom d-block d-md-none">
-  <ul class="nav nav-pills nav-fill justify-content-center">
+<nav class="navbar fixed-bottom d-block d-md-none bg-white shadow-sm">
+  <ul class="nav nav-pills nav-fill justify-content-center w-100">
     <li class="nav-item">
       <a href="{{ route('admin_home') }}" class="nav-link">
         <i class="fa-solid fa-house"></i>
