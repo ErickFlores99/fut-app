@@ -8,7 +8,7 @@
 
 <!-- Nav Bar -->
 @section('admin_navbar')
-    @include('app.admin.components.nav-index')
+    @include('app.admin.components.navbar')
 @endsection
 
 @section('script')
@@ -83,8 +83,8 @@
 
 @section('content')
     <div class="col-12 col-sm-11 mx-auto">
-        <div class="shadow-sm p-3 mb-3 bg-white rounded d-none" id="section_formCompetencias">
-                <!-- Aquí mostramos el formulario -->  
+        <div class="mb-5 d-none" id="section_formCompetencias">
+            <!-- Aquí mostramos el formulario -->  
         </div>
 
         <div id="section_listCompetencias">
