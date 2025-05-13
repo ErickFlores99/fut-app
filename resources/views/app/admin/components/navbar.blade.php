@@ -8,7 +8,7 @@
 
     <ul class="nav nav-underline justify-content-center">
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('ligas_torneos.index') }}" >
+        <a class="nav-link" href="{{ route('competencias.index') }}" >
             <i class="fa-solid fa-trophy"></i>
             Competencias
         </a>

@@ -16,8 +16,7 @@
         <!-- FontAwesime Icons  -->
         <link rel="stylesheet" href="{{ asset('assets/icons/fontawesome-free-6.7.2-web/css/all.min.css') }}">
 
-        <!-- DataTables  -->
-        <link rel="stylesheet" href="{{ asset('assets/libs/DataTables/datatables.min.css') }}">
+       
 
         @yield('css') <!-- Permite cargar CSS adicional por secciones -->
     </head>
@@ -44,9 +43,6 @@
 
         <!-- jQuery -->
         <script src="{{ asset('assets/libs/jquery-3.7.1.min.js') }}"></script>
-
-        <!-- DataTables -->
-        <script src="{{ asset('assets/libs/DataTables/datatables.min.js') }}"></script>
 
         <!-- Script de inicialización -->
         <script>

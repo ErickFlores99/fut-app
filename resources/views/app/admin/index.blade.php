@@ -68,7 +68,7 @@
                             <p class="text-muted small mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                             <!-- Botón -->
-                            <a href="{{ route('ligas_torneos.index') }}" class="btn btn-primary btn-sm">Acceder</a>
+                            <a href="{{ route('competencias.index') }}" class="btn btn-primary btn-sm">Acceder</a>
 
                         </div>
                     </div>

@@ -15,21 +15,41 @@
     {{-- TODO: Archivos para los scripts --}}
 
     <!-- CUSTOM JS -->
-    <script src="{{ asset('admin/ligas_torneos/index.js') }}?version=1.1" type="text/javascript"></script>
+    <script src="{{ asset('admin/Competencias/index.js') }}?version=1.1" type="text/javascript"></script>
 
-    <script>
-        /* Alerta SweetAlert2
-        Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
-        });
-        */
-    </script>
+    <!-- DataTable JS -->
+    <script src="{{ asset('assets/libs/DataTables/datatables.min.js') }}"></script>
+
+    {{-- TODO: Archivos para el funcionamineto del selector de selector de fechas --}}
+    <!-- Momment JS -->
+    <script src="{{ asset('assets/libs/moment-2.30.1.min.js') }}"></script>
+    <!-- DatePicker JS -->
+    <script src="{{ asset('assets/libs/datepicker.es.js') }}"></script>
+    <!-- DateRangePicker JS -->
+    <script src="{{ asset('assets/libs/daterangepicker.js') }}"></script>
+
+    {{--
+        <script>
+            /* Alerta SweetAlert2
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success"
+            });
+            */
+        </script>
+    --}}
 @endsection
 
 @section('css')
     {{-- TODO: Archivos para el estilo --}}
+
+    <!-- DataTables  -->
+    <link rel="stylesheet" href="{{ asset('assets/css/daterangepicker.css') }}">
+
+    <!-- DataTables  -->
+    <link rel="stylesheet" href="{{ asset('assets/libs/DataTables/datatables.min.css') }}">
+
 
     <style>
         .custom-card {
@@ -57,7 +77,7 @@
             <div class="row align-items-center">
                 <!-- Columna del título -->
                 <div class="col-12 col-md-8 text-center text-md-start mb-2 mb-md-0">
-                    <a href="{{ route('ligas_torneos.index') }}" class="text-decoration-none text-dark">
+                    <a href="{{ route('competencias.index') }}" class="text-decoration-none text-dark">
                         <h3>
                             <strong>Competencias</strong>
                         </h3>

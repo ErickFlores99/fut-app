@@ -1,7 +1,7 @@
 const mostrarForm_nvaCompetencia = () => {
     // realizamos una petion ajax
     $.ajax({
-        url: './ligas-torneos/competencias/nueva/datos-basicos',
+        url: './competencias/nueva/datos-basicos',
         type: 'GET',
         data: {},
         success: function(data) {
@@ -24,11 +24,10 @@ const ocultarForm_nvaCompetencia = () => {
     document.getElementById('section_formCompetencias').classList.add('d-none');
 };
 
-
 const mostrarEventos = () => {
     // Obtenemos los equipos registrados
     $.ajax({
-        url: '../ligas-torneos/competencias/mostrar',
+        url: './competencias/mostrar',
         data: {
         },
         success: function(data) {

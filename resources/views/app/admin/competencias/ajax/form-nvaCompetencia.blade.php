@@ -10,6 +10,7 @@
                 </button>
             </div>
             <div class="card-body">
+                {{-- route('nvoEquipo') --}}
                 <form action="#" id="nvaCompetencia_Form" method="post" enctype="multipart/form-data">
                     @csrf
                     
@@ -23,21 +24,20 @@
                     <div class="row mb-3">
                         <label for="" class="col-sm-3 col-form-label"><strong>Competencia:</strong></label>
                         <div class="col-sm-9">
-                            @foreach($tiposCompetencias as $tipoCompetencia)
+                            @foreach($tiposCompetencias as $competencia)
                                 <div class="form-check">
                                     <input 
                                         class="form-check-input competencia-checkbox" 
                                         type="checkbox" 
                                         name="idCompetencia"
-                                        value="" 
-                                        id="checkCompetencia_"
+                                        value="{{ $competencia->id }}" 
+                                        id="checkCompetencia_{{ $competencia->id }}"
                                     >
-                                    <label class="form-check-label" for="checkCompetencia_">
-                                        {{ $tipoCompetencia->nombre }} 
+                                    <label class="form-check-label" for="checkCompetencia_{{ $competencia->id }}">
+                                        {{ $competencia->nombre }}
                                     </label>
                                 </div>
                             @endforeach
-
                             <div class="form-check">
                                 <input 
                                     class="form-check-input competencia-checkbox" 
@@ -65,10 +65,10 @@
                                         class="form-check-input diaJuego-checkbox" 
                                         type="checkbox" 
                                         name="idDiaJuego"
-                                        value="" 
-                                        id="checkdiaJuego_"
+                                        value="{{ $diaJuego->id }}" 
+                                        id="checkdiaJuego_{{ $diaJuego->id }}"
                                     >
-                                    <label class="form-check-label" for="checkdiaJuego_">
+                                    <label class="form-check-label" for="checkdiaJuego_{{ $diaJuego->id }}">
                                         {{ $diaJuego->nombre }}
                                     </label>
                                 </div>
@@ -85,10 +85,10 @@
                                         class="form-check-input categoria-checkbox" 
                                         type="checkbox" 
                                         name="idCategoria"
-                                        value="$categoria->id" 
-                                        id="checkcategoria_$categoria->id"
+                                        value="{{ $categoria->id }}" 
+                                        id="checkcategoria_{{ $categoria->id }}"
                                     >
-                                    <label class="form-check-label" for="checkcategoria_$categoria->id">
+                                    <label class="form-check-label" for="checkcategoria_{{ $categoria->id }}">
                                         {{ $categoria->nombre }}
                                     </label>
                                 </div>
@@ -105,10 +105,10 @@
                                         class="form-check-input rama-checkbox" 
                                         type="checkbox" 
                                         name="idRama"
-                                        value="$rama->id" 
-                                        id="checkrama_$rama->id"
+                                        value="{{ $rama->id }}" 
+                                        id="checkrama_{{ $rama->id }}"
                                     >
-                                    <label class="form-check-label" for="checkrama_$rama->id">
+                                    <label class="form-check-label" for="checkrama_{{ $rama->id }}">
                                         {{ $rama->nombre }}
                                     </label>
                                 </div>
@@ -119,7 +119,7 @@
                     <div class="row mb-3">
                         <label for="" class="col-sm-3 col-form-label"><strong>Fecha Inicio</strong></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="fechasIncio" id="fechasIncio" placeholder="Rango de fechas para el inicio y final...">
+                            <input type="text" class="form-control" name="fechaInicio" id="fechaInicio" placeholder="Rango de fechas para el inicio y final...">
                         </div>
                     </div>
 
@@ -139,11 +139,57 @@
                             Guardar
                         </button>
                     </div>
-
-
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    $(document).ready(function () {
+        $('.competencia-checkbox').on('change', function () {
+            // Deseleccionamos los demás
+            $('.competencia-checkbox').not(this).prop('checked', false);
+
+            // Obtenemos el valor del seleccionado
+            const valorSeleccionado = $(this).val();
+
+            // Verificamos si es 0 (la opción "Otra...")
+            if (valorSeleccionado == 0 && $(this).is(':checked')) {
+                $('#nvaCompetencia').show();
+            } else {
+                $('#nvaCompetencia').hide();
+            }
+        });
+
+        $('.diaJuego-checkbox').on('change', function () {
+            // Si se selecciona uno, desmarcamos los demás
+            $('.diaJuego-checkbox').not(this).prop('checked', false);
+        });
+
+        $('.categoria-checkbox').on('change', function () {
+            // Si se selecciona uno, desmarcamos los demás
+            $('.categoria-checkbox').not(this).prop('checked', false);
+        });
+
+        $('.rama-checkbox').on('change', function () {
+            // Si se selecciona uno, desmarcamos los demás
+            $('.rama-checkbox').not(this).prop('checked', false);
+        });
+
+        $('#fechaInicio').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true,
+    
+            locale: labelsTraduccionES,
+            "alwaysShowCalendars": true,
+            ranges: rangesTraduccionEs,
+        });
+
+        $('#fechaInicio').on('cancel.daterangepicker', function(ev, picker) {
+            $('#fechaInicio').val('');
+        });
+        
+        $('#fechaInicio').val('');
+    });
+</script>
