@@ -29,9 +29,9 @@ class Competencia extends Model
         'updated_at',
     ];
 
-    public function competencia()
+    public function tipoCompetencia()
     {
-        return $this->belongsTo(Competencia::class, 'competencia_id');
+        return $this->belongsTo(TipoCompetencia::class, 'competencia_id');
     }
 
     public function categoria()

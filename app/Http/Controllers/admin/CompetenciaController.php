@@ -35,10 +35,9 @@ class CompetenciaController extends Controller
     } 
 
     public function mostrarCompetencia() {
-
+        //Obtenemos todas las competencias registadas
         return view('app.admin.competencias.ajax.list-competencias', [
-            //Obtenemos todas la informacion del catalogo
-            //"eventosDeportivos" => EventoDeportivo::with('competencia', 'categoria', 'diaJuego', 'rama')->get(),
+            "competencias" => Competencia::with('tipoCompetencia', 'categoria', 'diaJuego', 'rama')->get(),    
         ]);  
     }
 }
