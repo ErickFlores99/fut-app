@@ -6,6 +6,8 @@
 {{-- TODO: AGREGAR TITULO DEL HOME --}}
 @section('home','Fut-Admin')
 
+@php $opcionActiva = 'competencia'; @endphp
+
 {{-- TODO: NAVBAR --}}
 @section('admin_navbar')
     @include('app.admin.components.navbar')
