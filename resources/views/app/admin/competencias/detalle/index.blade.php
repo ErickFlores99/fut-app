@@ -1,7 +1,7 @@
 @extends('app.admin.layouts.app')
 
 {{-- TODO: AGREGAR TITULO DE LA PESTAÑA --}}
-@section('title','Competencias')
+@section('title','Detalle')
 
 {{-- TODO: AGREGAR TITULO DEL HOME --}}
 @section('home','Fut-Admin')
