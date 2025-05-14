@@ -31,7 +31,7 @@ class Competencia extends Model
 
     public function tipoCompetencia()
     {
-        return $this->belongsTo(TipoCompetencia::class, 'competencia_id');
+        return $this->belongsTo(TipoCompetencia::class, 'tipo_competencia_id');
     }
 
     public function categoria()

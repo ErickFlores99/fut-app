@@ -24,25 +24,25 @@
                     <div class="row mb-3">
                         <label for="" class="col-sm-3 col-form-label"><strong>Competencia:</strong></label>
                         <div class="col-sm-9">
-                            @foreach($tiposCompetencias as $competencia)
+                            @foreach($tiposCompetencias as $tipoCompetencia)
                                 <div class="form-check">
                                     <input 
-                                        class="form-check-input competencia-checkbox" 
+                                        class="form-check-input tipoCompetencia-checkbox" 
                                         type="checkbox" 
-                                        name="idCompetencia"
-                                        value="{{ $competencia->id }}" 
-                                        id="checkCompetencia_{{ $competencia->id }}"
+                                        name="idTipoCompetencia"
+                                        value="{{ $tipoCompetencia->id }}" 
+                                        id="checkCompetencia_{{ $tipoCompetencia->id }}"
                                     >
-                                    <label class="form-check-label" for="checkCompetencia_{{ $competencia->id }}">
-                                        {{ $competencia->nombre }}
+                                    <label class="form-check-label" for="checkCompetencia_{{ $tipoCompetencia->id }}">
+                                        {{ $tipoCompetencia->nombre }}
                                     </label>
                                 </div>
                             @endforeach
                             <div class="form-check">
                                 <input 
-                                    class="form-check-input competencia-checkbox" 
+                                    class="form-check-input tipoCompetencia-checkbox" 
                                     type="checkbox"
-                                    name="idCompetencia" 
+                                    name="idTipoCompetencia" 
                                     value="0" 
                                     id="checkCompetencia_0"
                                 >
@@ -50,8 +50,8 @@
                                     Otra...
                                 </label>                   
                             </div>
-                            <div id="nvaCompetencia" style="display: none;">
-                                <input type="text" class="form-control" id="nombre_nvaCompetencia" placeholder="Nueva Competencia...">
+                            <div id="nvoTipoCompetencia" style="display: none;">
+                                <input type="text" class="form-control" name="nombre_nvoTipoCompetencia" id="nombre_nvoTipoCompetencia" placeholder="Nuevo Tipo de Competencia...">
                             </div>
                         </div>
                     </div>
@@ -119,14 +119,14 @@
                     <div class="row mb-3">
                         <label for="" class="col-sm-3 col-form-label"><strong>Fecha Inicio</strong></label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="fechaInicio" id="fechaInicio" placeholder="Rango de fechas para el inicio y final...">
+                            <input type="text" class="form-control" name="fechaInicio" id="fechaInicio" placeholder="Fecha para el inicio de la competencia">
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="" class="col-sm-3 col-form-label"><strong>Comentarios</strong></label>
                         <div class="col-sm-9">
-                            <textarea name="" class="col-12 form-control" id="comentarios"></textarea>
+                            <textarea class="col-12 form-control" name="notas"  id="notas"></textarea>
                         </div>
                     </div>
                 
@@ -147,18 +147,18 @@
 
 <script>
     $(document).ready(function () {
-        $('.competencia-checkbox').on('change', function () {
+        $('.tipoCompetencia-checkbox').on('change', function () {
             // Deseleccionamos los demás
-            $('.competencia-checkbox').not(this).prop('checked', false);
+            $('.tipoCompetencia-checkbox').not(this).prop('checked', false);
 
             // Obtenemos el valor del seleccionado
             const valorSeleccionado = $(this).val();
 
             // Verificamos si es 0 (la opción "Otra...")
             if (valorSeleccionado == 0 && $(this).is(':checked')) {
-                $('#nvaCompetencia').show();
+                $('#nvoTipoCompetencia').show();
             } else {
-                $('#nvaCompetencia').hide();
+                $('#nvoTipoCompetencia').hide();
             }
         });
 

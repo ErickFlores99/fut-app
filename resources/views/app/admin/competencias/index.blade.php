@@ -28,17 +28,6 @@
     <!-- DateRangePicker JS -->
     <script src="{{ asset('assets/libs/daterangepicker.js') }}"></script>
 
-    {{--
-        <script>
-            /* Alerta SweetAlert2
-            Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
-                icon: "success"
-            });
-            */
-        </script>
-    --}}
 @endsection
 
 @section('css')
