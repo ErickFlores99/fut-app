@@ -22,6 +22,8 @@
         @yield('css') <!-- Permite cargar CSS adicional por secciones -->
     </head>
     <body>
+        @include('sweetalert::alert')
+
         <!-- Nav Bar -->
         @include('app.public.components.navbar')
 

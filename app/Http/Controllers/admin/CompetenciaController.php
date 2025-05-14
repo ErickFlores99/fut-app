@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 use App\Models\Competencia;
 use App\Models\Categoria;
 use App\Models\TipoCompetencia;
@@ -98,17 +100,22 @@ class CompetenciaController extends Controller
         }
     }
 
-    public function detalleIndex($id) {
+    public function detalleIndex($id)
+    {
         // Obtener la competencia con sus relaciones
-        $competencia = Competencia::with('tipoCompetencia', 'categoria', 'diaJuego', 'rama')->find($id);   
-        
-        if($competencia){
+        $competencia = Competencia::with('tipoCompetencia', 'categoria', 'diaJuego', 'rama')->find($id);
+
+        if ($competencia) {
             // Retornar la vista con la competencia
             return view('app.admin.competencias.detalle.index', [
-                "competencia" => $competencia,    
+                "competencia" => $competencia,
             ]);
         } else {
-            return view('app.admin.competencias.inicio.index');
+            // OPCIONAL: mostrar una alerta si tienes SweetAlert2
+            Alert::error('Error', 'La competencia no existe o fue eliminada');
+
+            // Redirigir a la ruta de inicio de competencias
+            return redirect()->route('competencias.index');
         }
     }
 }
