@@ -2,7 +2,7 @@
 <nav class="navbar d-none d-md-block">
   <div class="container-fluid">
     <a href="{{ route('admin_home') }}" class="text-decoration-none text-dark navbar-brand">
-      <img src="assets/images/logo.webp" alt="Logo" size="32" width="32" height="32" class="d-inline-block align-text-center">
+      <img src="assets/images/logo.webp" alt="Logo" width="32" height="32" class="d-inline-block align-text-center">
         @yield('home','404')
     </a>
 

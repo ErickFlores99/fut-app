@@ -32,7 +32,7 @@
                             <p class="text-muted small mb-3">{{$competencia->notas ?? ''}}</p>
 
                             <!-- Botón -->
-                            <button class="btn btn-primary btn-sm">Acceder</button>
+                            <a href="{{ route('competencias.detalle', $competencia->id) }}" class="btn btn-primary btn-sm">Acceder</a>
                         </div>
                     </div>
                 @endforeach

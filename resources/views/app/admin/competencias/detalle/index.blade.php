@@ -6,7 +6,7 @@
 {{-- TODO: AGREGAR TITULO DEL HOME --}}
 @section('home','Fut-Admin')
 
-<!-- Nav Bar -->
+{{-- TODO: NAVBAR --}}
 @section('admin_navbar')
     @include('app.admin.components.navbar')
 @endsection
@@ -15,8 +15,9 @@
     {{-- TODO: Archivos para los scripts --}}
 
     <!-- CUSTOM JS -->
-    <script src="{{ asset('admin/Competencias/index.js') }}?version=1.1" type="text/javascript"></script>
-
+    {{--
+        <script src="{{ asset('admin/Competencias/index.js') }}?version=1.1" type="text/javascript"></script>
+    --}}
     <!-- DataTable JS -->
     <script src="{{ asset('assets/libs/DataTables/datatables.min.js') }}"></script>
 
@@ -38,25 +39,6 @@
 
     <!-- DataTables  -->
     <link rel="stylesheet" href="{{ asset('assets/libs/DataTables/datatables.min.css') }}">
-
-
-    <style>
-        .custom-card {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                border-radius: 2rem;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-                display: flex;
-                justify-content: center;
-            }
-
-            .icon-box {
-                width: 60px;
-                height: 60px;
-                background-color: #007bff;
-                border-radius: 12px;
-            }
-        </style>
 @endsection
 
 <!-- Header -->
@@ -71,19 +53,14 @@
                             <strong>Competencias</strong>
                         </h3>
                     </a>
+                    <p>
+                        {{$competencia->nombre}} / {{$competencia->tipoCompetencia->nombre}} - {{$competencia->diaJuego->nombre}} /  {{$competencia->categoria->nombre}} - {{$competencia->rama->nombre}}
+                    </p>
                 </div>
 
-                <!-- Columna del botón -->
+                <!-- Columna de botónes -->
                 <div class="col-12 col-md-4 text-center text-md-end">
-                    <button  id="btn_mostrarForm_nvaCompetencia" onclick="mostrarForm_nvaCompetencia();"
-                        class="btn btn-primary btn-sm"
-                        data-bs-toggle="tooltip" 
-                        title="Agregar nuevo evento deportivo" 
-                        data-bs-placement="top"
-                    >
-                        Nuevo
-                        <i class="fa-solid fa-circle-plus"></i>
-                    </button>
+
                 </div>
             </div>
         </div>
@@ -92,13 +69,7 @@
 
 @section('content')
     <div class="col-12 col-sm-11 mx-auto">
-        <div class="mb-5 d-none" id="section_formCompetencias">
-            <!-- Aquí mostramos el formulario -->  
-        </div>
 
-        <div id="section_listCompetencias">
-            <!-- Aquí mostramos las competencias ya creadas -->  
-        </div>
     </div>
 
 @endsection

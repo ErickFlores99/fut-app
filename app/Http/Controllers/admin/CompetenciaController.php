@@ -55,20 +55,6 @@ class CompetenciaController extends Controller
         //convercion de nombre a mayusculas
         $mayusNom = strtoupper($nombre);
 
-        /*
-            dd(
-                $nombre, 
-                $mayusNom,
-                $idTipoCompetencia, 
-                $nombre_nvoTipoCompetencia,
-                $idDiaJuego, 
-                $idCategoria, 
-                $idRama, 
-                $fechaInicio, 
-                $notas, 
-            );
-        */
-
         //buscamos que no exista una liga o torneo con las mismas especificacines.
         $competencia = Competencia::where('nombre', $mayusNom)
             ->where('tipo_competencia_id', $idTipoCompetencia)
@@ -109,6 +95,20 @@ class CompetenciaController extends Controller
                 'status' => false,
                 'message' => 'Se encontro una competencia ya registrada con los datos'
             ]);
+        }
+    }
+
+    public function detalleIndex($id) {
+        // Obtener la competencia con sus relaciones
+        $competencia = Competencia::with('tipoCompetencia', 'categoria', 'diaJuego', 'rama')->find($id);   
+        
+        if($competencia){
+            // Retornar la vista con la competencia
+            return view('app.admin.competencias.detalle.index', [
+                "competencia" => $competencia,    
+            ]);
+        } else {
+            return view('app.admin.competencias.inicio.index');
         }
     }
 }

@@ -36,7 +36,8 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
 
     // Grupo para la sección "Ligas / Torneos"
     Route::prefix('competencias')->name('competencias.')->group(function () {
-
+        
+        // Rutas para todas las competencias
         Route::get('/', [App\Http\Controllers\Admin\CompetenciaController::class, 'index'])
             ->name('index');
 
@@ -49,6 +50,9 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
         Route::post('/crear', [App\Http\Controllers\Admin\CompetenciaController::class, 'crearCompetencia'])
             ->name('crear');
 
+        // Rutas para el detalle de una competencia específica
+        Route::get('/{id}', [App\Http\Controllers\Admin\CompetenciaController::class, 'detalleIndex'])
+            ->name('detalle'); // competencias.detalle
     });
 
 });
