@@ -18,12 +18,12 @@ class CompetenciaController extends Controller
 {
     public function index()
     {
-        return view('app.admin.competencias.index');
+        return view('app.admin.competencias.inicio.index');
     }
 
     public function datosBasicos() {
 
-        return view('app.admin.competencias.ajax.form-nvaCompetencia', [
+        return view('app.admin.competencias.inicio.ajax.form-nvaCompetencia', [
             //Obtenemos todas la informacion del catalogo
             "categorias" => Categoria::all(),
             "tiposCompetencias" => TipoCompetencia::all(),
@@ -36,7 +36,7 @@ class CompetenciaController extends Controller
 
     public function mostrarCompetencia() {
         //Obtenemos todas las competencias registadas
-        return view('app.admin.competencias.ajax.list-competencias', [
+        return view('app.admin.competencias.inicio.ajax.list-competencias', [
             "competencias" => Competencia::with('tipoCompetencia', 'categoria', 'diaJuego', 'rama')->get(),    
         ]);  
     }
